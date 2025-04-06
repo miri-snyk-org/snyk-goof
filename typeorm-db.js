@@ -3,6 +3,10 @@ var EntitySchema = typeorm.EntitySchema;
 
 const Users = require("./entity/Users")
 
+// trigger SAST
+const query = new URLSearchParams(window.location.search).get('query');
+document.getElementById('search_query').innerHTML = query;
+
 typeorm.createConnection({
   name: "mysql",
   type: "mysql",
